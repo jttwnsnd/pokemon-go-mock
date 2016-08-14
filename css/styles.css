@@ -1,0 +1,7 @@
+/* line 23, ../compass/sass/styles.scss */
+#map {
+  margin-left: 50px;
+  height: 75vh;
+  width: 50%;
+  float: left;
+}
