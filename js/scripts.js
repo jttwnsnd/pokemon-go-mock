@@ -24,13 +24,31 @@ pokemonApp.controller('pokemonController', function($scope){
 			//sets the icon image
 			icon: 'css/ultraball.png'
 		});
+		google.maps.event.addListener(marker, 'click', function(){
+			var randomPoke = Math.ceil(Math.random()*20)
+			var newImg = 'css/pokemon/' + randomPoke + '.png';
+          	console.log(marker);
+          	// if(temp === 1){
+          	// 	if(marker.icon == icon){
+          	// 		// marker.setIcon(ultraball);
+          	// 		console.log('ultra');
+          	// 	}else{
+          	// 		// marker.setIcon(icon);
+          	// 		console.log('oh no!');
+          	// 	}
+          	// 	iconClicked = true;
+          	// 	temp = 0;
+          	// }
+          	// console.log(marker);
+		})
 		markers.push(marker);
 		console.log(marker);
 	}
-	for(pokemon in pokemonList){
-		createMarker(pokemon);
-	}
 	$scope.catchEmAll = function(){
 		console.log('hi');
+		for(pokemon in pokemonList){
+			createMarker(pokemon);
+		}
+		
 	}
 })
